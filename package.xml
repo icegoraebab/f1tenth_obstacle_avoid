@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>f1tenth_obstacle_avoid</name>
+  <version>0.0.0</version>
+  <description>TODO: Package description</description>
+  <maintainer email="ohw25090@gmail.com">hyeonwoo</maintainer>
+  <license>TODO: License declaration</license>
+
+  <!-- 빌드툴: ament_python 사용 -->
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <!-- 런타임 의존성 (odom_to_tf, scan_preproc용) -->
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>ackermann_msgs</exec_depend>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
+

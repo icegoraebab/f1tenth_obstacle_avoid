@@ -1,0 +1,9 @@
+ftg_node:
+  ros__parameters:
+    ma_k: 9
+    bubble_radius: 0.6
+    min_gap_th: 0.75
+    max_steer_deg: 30.0
+    v_min: 0.8
+    v_max: 2.4
+    v_scale_dist: 3.0

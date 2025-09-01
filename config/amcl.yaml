@@ -1,0 +1,39 @@
+amcl:
+  ros__parameters:
+    # 공통
+    use_sim_time: false
+    tf_broadcast: true
+
+    # 프레임
+    base_frame_id: ego_racecar/base_link
+    odom_frame_id: ego_racecar/odom
+    global_frame_id: map
+
+    # LiDAR 입력 토픽 (전처리 결과)
+    scan_topic: /scan_clean   # 전처리를 안 쓰면 /scan 으로 바꿔도 됨
+
+    # 파티클 필터
+    min_particles: 500
+    max_particles: 2000
+    resample_interval: 1
+
+    # 업데이트/변환 지연 허용
+    update_min_d: 0.05        # 최소 이동 거리 업데이트
+    update_min_a: 0.05        # 최소 회전각 업데이트 (rad)
+    transform_tolerance: 0.2  # TF 타임오프셋 허용 (s)
+
+    # 레이저 모델 (likelihood_field)
+    laser_model_type: likelihood_field
+    laser_min_range: 0.05
+    laser_max_range: 30.0
+    z_hit: 0.95
+    z_rand: 0.05
+    sigma_hit: 0.2
+    laser_likelihood_max_dist: 2.0   # 근접장 가중치 최대 거리(기본≈2.0m)
+
+    # 모션 모델(노이즈; 기본값이 무난하지만 상황 따라 조정)
+    alpha1: 0.2   # 회전에 대한 회전 노이즈
+    alpha2: 0.2   # 병진에 대한 회전 노이즈
+    alpha3: 0.2   # 병진에 대한 병진 노이즈
+    alpha4: 0.2   # 회전에 대한 병진 노이즈
+

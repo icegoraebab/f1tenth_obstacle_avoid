@@ -1,0 +1,31 @@
+amcl:
+  ros__parameters:
+    use_map_topic: true
+    yaml_filename: "map.yaml" # 이 값은 map_server가 처리하므로 그대로 둡니다.
+    map_topic: /map
+    scan_topic: /scan
+    odom_frame_id: "ego_racecar/odom"
+    base_frame_id: "ego_racecar/base_link" # 보내주신 frames.pdf와 일치하는지 확인! [cite: 610]
+    global_frame_id: "map"
+    tf_broadcast: true
+
+    # 파티클 필터 파라미터
+    min_particles: 500
+    max_particles: 3000
+    initial_pose:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      yaw: 0.0
+
+    # 레이저 모델 파라미터
+    laser_model_type: "likelihood_field"
+    laser_max_range: 30.0
+
+    # 업데이트 주기
+    update_min_d: 0.1
+    update_min_a: 0.2
+    resample_interval: 1
+    transform_tolerance: 0.5
+    recovery_alpha_slow: 0.0
+    recovery_alpha_fast: 0.0
